@@ -1,6 +1,7 @@
 from django.db import models
 
 class Producto(models.Model):
+    nombre = models.CharField(max_length=50, null=True)
     autor = models.CharField(max_length=50)
     sinopsis = models.TextField()
     fecha_inicio = models.DateTimeField()
@@ -14,4 +15,4 @@ class Producto(models.Model):
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.nombre

@@ -1,0 +1,13 @@
+.img_producto{
+  max-height: 600px;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.titulo_principal{
+  color: #f95959;
+}
+
+.sinopsis{
+  color: beige;
+}
