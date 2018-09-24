@@ -9,6 +9,7 @@ class Producto(models.Model):
     fecha_fin = models.DateTimeField(blank=True, null=True)
     genero = models.CharField(max_length=50)
     capitulos = models.IntegerField()
+    link = models.CharField(max_length=500, blank=True, null=True)
     image = models.ImageField(upload_to='img/', blank=True)
     imagen_portada = models.ImageField(upload_to='img/', blank=True)
     fecha_publicacion = models.DateTimeField(blank=True, null=True)

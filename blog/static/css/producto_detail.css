@@ -11,3 +11,13 @@
 .sinopsis{
   color: beige;
 }
+
+.btn_download{
+  background-color: #facf5a;
+  border-radius: 25px;
+  border-color: #facf5a;
+}
+
+.boton{
+  color: white;
+}
