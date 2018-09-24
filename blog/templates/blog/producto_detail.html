@@ -4,7 +4,7 @@
 
 <div class="container recipe">
     {% if p.image %}
-      <img class="img_producto mx-auto d-block" src=" {{ p.imagen_portada.url }} ">
+      <img class="img_producto img-fluid mx-auto d-block" alt="Responsive image" src=" {{ p.imagen_portada.url }} ">
     {% endif %}
     <h1 class="titulo_principal">{{ p.nombre }}</h1>
     <p class="text-justify sinopsis">{{ p.descripcion|linebreaksbr }}</p>
@@ -14,6 +14,7 @@
     <p class="text-justify sinopsis">{{ p.fecha_inicio }} - {{ p.fecha_fin }}</p><br>
     <button type="button" class="btn btn_download btn-danger btn-lg mx-auto d-block"><a class="boton" href=" {{ p.link }} ">Download</a></button>
     <p class="text-right sinopsis date">Published: {{ p.fecha_publicacion }} </p>
+    <a href="google.com">{{ p.link }}</a><br>
 
 </div>
 
