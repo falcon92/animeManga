@@ -10,3 +10,7 @@ def principal(request):
 def producto_detail(request, pk):
     p = get_object_or_404(Producto, pk=pk)
     return render(request, 'blog/producto_detail.html', {'p': p})
+
+def mangas(request):
+    productos = Producto.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('fecha_publicacion')
+    return render(request, 'blog/mangas.html', {'productos': productos})

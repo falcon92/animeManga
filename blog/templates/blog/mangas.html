@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+<div class="container container_principal">
+
+  <br>
+  <h3 class="display-4 titulo">Listado de Mangas...</h3>
+  <hr>
+  <br>
+
+  <div class="row">
+    {% for p in productos %}
+      <div class="col-sm-3">
+        <div class="card">
+          {% if p.image %}
+          <div class="div_card_image">
+            <img class="card-img-top" src=" {{ p.image.url }} " alt="Card image cap">
+          </div>
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title"><a href="{% url 'producto_detail' pk=p.pk %}">{{ p.nombre }}</a></h5>
+          </div>
+        </div>
+        <br>
+
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}
