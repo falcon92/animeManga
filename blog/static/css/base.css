@@ -9,3 +9,16 @@
 .bg-orange{
   background-color: #facf5a;
 }
+
+.foot{
+  background-color: #facf5a;
+  color: red;
+}
+
+.logo_foot{
+  height: 70%;
+}
+
+.div_logo{
+  height: 50px;
+}
