@@ -7,8 +7,8 @@
       <img class="img_producto mx-auto d-block" src=" {{ p.image.url }} ">
     {% endif %}
     <h1 class="titulo_principal">{{ p.nombre }}</h1>
-    <p class="text-justify sinopsis">{{ p.sinopsis|linebreaksbr }}</p>
-    <p class="text-right date">Published: {{ p.fecha_inicio }} </p>
+    <p class="text-justify sinopsis">{{ p.descripcion|linebreaksbr }}</p>
+    <p class="text-right date">Published: {{ p.fecha_publicacion }} </p>
 </div>
 
 {% endblock %}
