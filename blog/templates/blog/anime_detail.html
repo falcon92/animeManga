@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="container recipe">
+    {% if m.image %}
+      <img class="img_producto img-fluid mx-auto d-block" alt="Responsive image" src=" {{ m.imagen_portada.url }} ">
+    {% endif %}
+    <h1 class="titulo_principal">{{ m.nombre }}</h1>
+    <p class="text-justify sinopsis">{{ m.descripcion|linebreaksbr }}</p>
+    <p class="text-justify sinopsis">Autor: {{ m.autor }}</p>
+    <p class="text-justify sinopsis">Genero: {{ m.genero }}</p>
+    <p class="text-justify sinopsis">Capitulos: {{ m.capitulos }}</p>
+    <p class="text-justify sinopsis">{{ m.fecha_inicio }} - {{ m.fecha_fin }}</p><br>
+    <button type="button" class="btn btn_download btn-danger btn-lg mx-auto d-block"><a class="boton" href=" {{ m.link }} ">Download</a></button>
+    <p class="text-right sinopsis date">Published: {{ m.fecha_publicacion }} </p>
+    <br>
+</div>
+
+{% endblock %}

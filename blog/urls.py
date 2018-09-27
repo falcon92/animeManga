@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^$', views.principal, name='principal'),
     url(r'^producto/(?P<pk>[0-9]+)/$', views.producto_detail, name='producto_detail'),
     url(r'^mangas/$', views.mangas, name='mangas'),
+    url(r'^animes/$', views.animes, name='animes'),
+    url(r'^anime/(?P<pk>[0-9]+)/$', views.anime_detail, name='anime_detail'),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

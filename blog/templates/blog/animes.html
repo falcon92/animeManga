@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+<div class="container container_principal">
+
+  <br>
+  <h3 class="display-4 titulo">Listado de Animes...</h3>
+  <hr>
+  <br>
+
+  <div class="row">
+    {% for m in animes %}
+      <div class="col-sm-3">
+        <div class="card">
+          {% if m.image %}
+          <div class="div_card_image">
+            <img class="card-img-top" src=" {{ m.image.url }} " alt="Card image cap">
+          </div>
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title"><a href="{% url 'anime_detail' pk=m.pk %}">{{ m.nombre }}</a></h5>
+          </div>
+        </div>
+        <br>
+
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}
