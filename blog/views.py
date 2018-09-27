@@ -10,11 +10,12 @@ def principal(request):
     animes = Anime.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('fecha_publicacion')
     query = request.GET.get("q")
     if query:
-        animes = animes.filter(
-        Q(nombre__icontains=query) |
-        Q(descripcion__icontains=query) |
-        Q(autor__icontains=query)
+        productos = productos.filter(
+        Q(nombre__icontains=query)
+#        Q(descripcion__icontains=query) |
+#        Q(autor__icontains=query)
         ).distinct()
+        animes = animes.filter(Q(nombre__icontains=query))
     return render(request, 'blog/principal.html', {'productos': productos, 'animes' : animes})
 
 
