@@ -1,10 +1,20 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Producto, Anime
 from django.utils import timezone
+from django.db.models import Q
+#from django.http import HttpResponse
+#import json
 
 def principal(request):
     productos = Producto.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('fecha_publicacion')
     animes = Anime.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('fecha_publicacion')
+    query = request.GET.get("q")
+    if query:
+        animes = animes.filter(
+        Q(nombre__icontains=query) |
+        Q(descripcion__icontains=query) |
+        Q(autor__icontains=query)
+        ).distinct()
     return render(request, 'blog/principal.html', {'productos': productos, 'animes' : animes})
 
 
