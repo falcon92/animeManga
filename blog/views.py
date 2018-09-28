@@ -13,7 +13,8 @@ def principal(request):
         productos = productos.filter(
         Q(nombre__icontains=query) |
         Q(descripcion__icontains=query) |
-        Q(autor__icontains=query)
+        Q(autor__icontains=query) |
+        Q(genero__icontains=query)
         ).distinct()
         animes = animes.filter(Q(nombre__icontains=query))
     return render(request, 'blog/principal.html', {'productos': productos, 'animes' : animes})
@@ -30,7 +31,8 @@ def mangas(request):
         productos = productos.filter(
         Q(nombre__icontains=query) |
         Q(descripcion__icontains=query) |
-        Q(autor__icontains=query)
+        Q(autor__icontains=query) |
+        Q(genero__icontains=query)
         ).distinct()
     return render(request, 'blog/mangas.html', {'productos': productos})
 
@@ -41,7 +43,8 @@ def animes(request):
         animes = animes.filter(
         Q(nombre__icontains=query) |
         Q(descripcion__icontains=query) |
-        Q(autor__icontains=query)
+        Q(autor__icontains=query) |
+        Q(genero__icontains=query)
         ).distinct()
     return render(request, 'blog/animes.html', {'animes' : animes})
 
