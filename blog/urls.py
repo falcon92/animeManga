@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^mangas/$', views.mangas, name='mangas'),
     url(r'^animes/$', views.animes, name='animes'),
     url(r'^anime/(?P<pk>[0-9]+)/$', views.anime_detail, name='anime_detail'),
+    url(r'^sitemap.xml/$', views.sitemap, name="sitemap"),
 #    url(r'^search$', search, name='search' )
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

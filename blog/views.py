@@ -51,3 +51,6 @@ def animes(request):
 def anime_detail(request, pk):
     m = get_object_or_404(Anime, pk=pk)
     return render(request, 'blog/anime_detail.html', {'m' : m})
+
+def sitemap(request):
+    return render(request, 'blog/sitemap.xml')
